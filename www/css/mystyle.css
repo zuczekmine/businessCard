@@ -1,0 +1,13 @@
+body {
+    background-color: lightblue;
+}
+h1 {
+	font-size: 80px;
+}
+#imie {
+	text-align: center;
+	font-size: 50px;
+}
+#indeks {
+	font-size: 30px;
+}
