@@ -19,6 +19,9 @@ function goToMainPage(){
 } 
 
 function internetInfo() {
+	document.addEventListener("deviceready",onDeviceReady, false);
+	document.getElementById("inter").innerHTML = "lolo";
+	
 	var networkState = navigator.connection.type;
  
     var states = {};
@@ -30,9 +33,9 @@ function internetInfo() {
     states[Connection.CELL_4G]  = 'Cell 4G connection';
     states[Connection.CELL]     = 'Cell generic connection';
     states[Connection.NONE]     = 'No network connection';
-	
-	document.querySelector('.internet').innerHTML = states[networkState];
-	alert(states[networkState]);
+
+	var result = states[networkState];
+	//document.getElementById("inter").innerHTML = result;
 }
 
 function onSuccess(acceleration) {
