@@ -55,7 +55,6 @@ function onError() {
 
 function getMovementInfo() {
 	var watchPos =navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
-	var result = "tablica watchPos: ";
-	//+watchPos.length+"tablica watchPosition: "+ watchPosition.length;
+	var result = "tablica watchPos: "+watchPos.length();
 	document.getElementById("mov").innerHTML = result;
 }
