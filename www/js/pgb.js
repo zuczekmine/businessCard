@@ -22,10 +22,15 @@ function internetInfo() {
 }
 
 function onSuccess(acceleration) {
-    alert('Acceleration X: ' + acceleration.x + '\n' +
+	var array = [];
+	array[0] = acceleration.x;
+	array[1] = acceleration.y;
+	array[2] = acceleration.z;
+    /*alert('Acceleration X: ' + acceleration.x + '\n' +
           'Acceleration Y: ' + acceleration.y + '\n' +
           'Acceleration Z: ' + acceleration.z + '\n' +
-          'Timestamp: '      + acceleration.timestamp + '\n');
+          'Timestamp: '      + acceleration.timestamp + '\n');*/
+	return array;
 }
 
 function onError() {
