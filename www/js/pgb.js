@@ -40,6 +40,9 @@ function onError() {
 function getMovementInfo() {
 	var options = { frequency: 3000 };  // Update every 3 seconds
 	var watchPos =navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
+	if(watchPos.length() == watchPosition.length()) {
+		alert("tablice takie same i o dlugosci:  "+watchPos.length());
+	}
 	if (watchPos == watchPosition) {
 		alert('Nie zmieniles pozycji');
 	} else {
