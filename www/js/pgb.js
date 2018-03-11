@@ -4,6 +4,7 @@ function init() {
 
 function onDeviceReady() {
 	navigator.notification.beep(0);
+	var watchPosition = navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
 }
 
 function goToDeviceInfo(){
@@ -56,12 +57,7 @@ function getMovementInfo() {
 	var options = { frequency: 3000 };  // Update every 3 seconds
 	var watchPos =navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
 	if(watchPos.length() == watchPosition.length()) {
-		alert("tablice takie same i o dlugosci:  "+watchPos.length());
-	}
-	if (watchPos == watchPosition) {
-		alert('Nie zmieniles pozycji');
-	} else {
-		watchPosition = watchPos;
-		alert('Pozycja zostala zmieniona');
+		var result = "tablice takie same i o dlugosci:  "+watchPos.length();
+		document.getElementById("mov").innerHTML = result;
 	}
 }
