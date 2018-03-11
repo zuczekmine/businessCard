@@ -54,10 +54,7 @@ function onError() {
 }
 
 function getMovementInfo() {
-	var options = { frequency: 3000 };  // Update every 3 seconds
 	var watchPos =navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
-	if(watchPos.length() == watchPosition.length()) {
-		var result = "tablice takie same i o dlugosci:  "+watchPos.length();
-		document.getElementById("mov").innerHTML = result;
-	}
+	var result = "tablica watchPos: "+watchPos.length+"tablica watchPosition: "+ watchPosition.length;
+	document.getElementById("mov").innerHTML = result;
 }
