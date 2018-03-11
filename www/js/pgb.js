@@ -4,6 +4,7 @@ function init() {
 
 function onDeviceReady() {
 	navigator.notification.beep(1);
+	var watchPosition = navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
 }
 
 function internetInfo() {
@@ -18,8 +19,6 @@ function internetInfo() {
     states[Connection.CELL_4G]  = 'Cell 4G connection';
     states[Connection.CELL]     = 'Cell generic connection';
     states[Connection.NONE]     = 'No network connection';
- 
-    alert('Connection type: ' + states[networkState]);
 }
 
 function onSuccess(acceleration) {
@@ -35,6 +34,11 @@ function onError() {
 
 function getMovementInfo() {
 	var options = { frequency: 3000 };  // Update every 3 seconds
-
-	var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+	var watchPos =navigator.accelerometer.getCurrentAcceleration(onSuccess, onError, options);
+	if (watchPos == watchPosition) {
+		alert('Nie zmieniles pozycji');
+	} else {
+		watchPosition = watchPos;
+		alert('Pozycja zostala zmieniona');
+	}
 }
