@@ -19,7 +19,6 @@ function goToMainPage(){
 } 
 
 function internetInfo() {
-	document.addEventListener("deviceready",onDeviceReady, false);
 	
 	var networkState = navigator.connection.type;
  
