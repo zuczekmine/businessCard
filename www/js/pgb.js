@@ -3,8 +3,7 @@ function init() {
 }
 
 function onDeviceReady() {
-	navigator.notification.beep(1);
-	var watchPosition = navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
+	navigator.notification.beep(0);
 }
 
 function goToDeviceInfo(){
@@ -33,6 +32,7 @@ function internetInfo() {
     states[Connection.NONE]     = 'No network connection';
 	
 	document.querySelector('.internet').innerHTML = states[networkState];
+	alert(states[networkState]);
 }
 
 function onSuccess(acceleration) {
