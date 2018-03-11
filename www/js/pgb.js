@@ -7,6 +7,18 @@ function onDeviceReady() {
 	var watchPosition = navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
 }
 
+function goToDeviceInfo(){
+  window.location.href = "deviceInfo.html";
+} 
+
+function goToMovementInfo(){
+  window.location.href = "movementInfo.html";
+} 
+
+function goToMainPage(){
+  window.location.href = "index.html";
+} 
+
 function internetInfo() {
 	var networkState = navigator.connection.type;
  
@@ -19,6 +31,8 @@ function internetInfo() {
     states[Connection.CELL_4G]  = 'Cell 4G connection';
     states[Connection.CELL]     = 'Cell generic connection';
     states[Connection.NONE]     = 'No network connection';
+	
+	document.querySelector('.internet').innerHTML = states[networkState];
 }
 
 function onSuccess(acceleration) {
