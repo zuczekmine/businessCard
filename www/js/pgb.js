@@ -20,7 +20,6 @@ function goToMainPage(){
 
 function internetInfo() {
 	document.addEventListener("deviceready",onDeviceReady, false);
-	document.getElementById("inter").innerHTML = "lolo";
 	
 	var networkState = navigator.connection.type;
  
@@ -35,7 +34,7 @@ function internetInfo() {
     states[Connection.NONE]     = 'No network connection';
 
 	var result = states[networkState];
-	//document.getElementById("inter").innerHTML = result;
+	document.getElementById("inter").innerHTML = result;
 }
 
 function onSuccess(acceleration) {
